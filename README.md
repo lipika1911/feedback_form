@@ -15,6 +15,12 @@ It allows users to submit their name, email, and feedback — all stored in a Mo
 
 ### View Feedbacks Page
 ![Feedbacks Page](./screenshots/feedbacks-page.jpeg)
+
+## Usage
+- Open the homepage `(/)` to submit your feedback.
+
+- Navigate to `/feedbacks` to view all submitted feedback entries.
+  
 ## Core Features
 
 - **Feedback Form** – Submit your name, email, and feedback.
@@ -84,9 +90,3 @@ npm run dev
 
 ### ✅ You’re all set!
 - Open http://localhost:3000 in your browser.
-## Usage
-
-
-- Open the homepage `(/)` to submit your feedback.
-
-- Navigate to `/feedbacks` to view all submitted feedback entries.
