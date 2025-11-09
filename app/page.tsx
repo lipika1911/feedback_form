@@ -1,3 +1,4 @@
+import { FeedbackForm } from "@/components/feedback-form";
 import Link from "next/link";
 
 export default function Home() {
@@ -22,7 +23,7 @@ export default function Home() {
 
         {/* Main Content Section */}
         <section className="flex flex-col">
-          {/* Feedback Form Component */}
+          <FeedbackForm />
         </section>
       </>
   );
