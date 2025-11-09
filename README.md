@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# 📝 Feedback Collector
 
-First, run the development server:
+A simple feedback collection app built using **Next.js, MongoDB Atlas, Prisma ORM, and Tailwind CSS**.
+It allows users to submit their name, email, and feedback — all stored in a MongoDB database and viewable via a server-rendered page.
+
+
+## Preview
+
+👉 [Experiment it Live!](https://feedback-form-101.vercel.app/)
+## Screenshots
+
+### Landing Page
+![Landing Page](./screenshots/landing-page.jpeg)
+
+### View Feedbacks Page
+![Feedbacks Page](./screenshots/feedbacks-page.jpeg)
+## Core Features
+
+- **Feedback Form** – Submit your name, email, and feedback.
+
+- **Data Storage** – Feedback is securely stored in MongoDB Atlas via Prisma ORM.
+
+- **Server-Rendered Feedback Page** – View all feedback entries at **/feedbacks** route.
+
+- **App Router Integration** – Built with Next.js App Router for modern routing and layout management.
+
+- **Client Component** – Interactive form using a client-side component for real-time input handling.
+
+- **Styled with Tailwind CSS** – Clean, responsive, and minimal design.
+
+## Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/)  
+- **Language**: TypeScript  
+- **Styling**: Tailwind CSS
+- **Database**: MongoDB Atlas
+- **ORM**: Prisma ORM
+
+
+## Installation Guide
+
+### ✅ Prerequisites
+
+Before you begin, make sure you have:
+
+- **Node.js** (v20 or later) – [Download](https://nodejs.org/)
+- **npm** or **yarn**
+- **MongoDB Atlas Account** - [Create Account](https://www.mongodb.com/cloud/atlas/register)
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/lipika1911/feedback_form.git
+cd feedback-form
+```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Configure Environment Variables
+Create a `.env` file in the root directory based on `.env.example` :
+
+```bash
+DATABASE_URL="mongodb+srv://<USERNAME>:<PASSWORD>@cluster0.mongodb.net/<DATABASE>?retryWrites=true&w=majority"
+```
+
+### Setup Prisma
+Generate the Prisma client and push the schema to your database:
+
+```bash
+npx prisma generate
+npx prisma db push
+```
+
+### Run the App
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### ✅ You’re all set!
+- Open http://localhost:3000 in your browser.
+## Usage
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Open the homepage `(/)` to submit your feedback.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Navigate to `/feedbacks` to view all submitted feedback entries.
