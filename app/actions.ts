@@ -21,7 +21,7 @@ export async function submitFeedback(formData: FormData) {
       },
     })
 
-    revalidatePath("/feedback")
+    revalidatePath("/feedbacks")
 
     return { success: true, data: newFeedback }
   } catch (error) {

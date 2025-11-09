@@ -1,10 +1,33 @@
 "use client";
 
+import { submitFeedback } from "@/app/actions";
 import React, { useState } from "react";
 
 export function FeedbackForm() {
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
   const [loading, setLoading] = useState(false);
+
+  async function handleAction(formData: FormData) {
+    setLoading(true);
+    setMessage(null);
+
+    try {
+      const result = await submitFeedback(formData);
+
+      if (result.success) {
+        setMessage({ type: "success", text: "Thank you for your feedback!" });
+      } else {
+        throw new Error(result.error || "Failed to submit feedback");
+      }
+    } catch (error) {
+      setMessage({
+        type: "error",
+        text: error instanceof Error ? error.message : "Something went wrong",
+      });
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <div className="w-full max-w-md mx-auto bg-white rounded-xl border border-gray-200 shadow-md p-6">
@@ -12,7 +35,7 @@ export function FeedbackForm() {
         <h2 className="text-2xl font-semibold text-black">Send Us Your Feedback</h2>
       </div>
 
-      <form className="space-y-4">
+      <form action={handleAction} className="space-y-4">
 
         {/* Name Field */}
         <div className="space-y-2">
